@@ -46,18 +46,21 @@ function iteracion() {
     const container = document.querySelector("#container");
      let symbol = document.getElementById("span");  // llama a la funcion div del html
      let number = document.getElementById("span1"); // llama a la funcion div del html            
-     let symbolarray = ["&diams;", "&spades;", "&hearts;", "&clubs;"];
-     var randomsymbol = Math.floor(Math.random() * symbolarray.length);
-     symbol1 = symbolarray[randomsymbol]; 
+    //  let symbolarray = ["&diams;", "&spades;", "&hearts;", "&clubs;"];
+    //  var randomsymbol = Math.floor(Math.random() * symbolarray.length);
+    //  symbol1 = symbolarray[randomsymbol]; 
     // number.innerHTML = sortMeglobal[i];     
 //    var arrayLength = document.getElementById("fnumber").value;  // llama a la funcion div del html
 //    let arrayLength1 = arrayLengthglobal;
     //  return(console.log(arrayLength));
     for( let i=0; i < 20; i++) {   
+        let symbolarray = ["&diams;", "&spades;", "&hearts;", "&clubs;"];
+        var randomsymbol = Math.floor(Math.random() * symbolarray.length);
+        symbol1 = symbolarray[randomsymbol]; 
         let card = document.createElement("div");
         card.classList.add("card");
         let p = document.createElement("span");
-        p.innerHTML = "&spades;";
+        p.innerHTML = symbol1;
         let n = document.createElement("span");
         n.innerHTML = "7";
         card.appendChild(p);
