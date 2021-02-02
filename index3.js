@@ -39,6 +39,11 @@ function processFormData1() {
     while (wall > 0){
         let index = 0;
         while (index < wall) {
+          if (sortMe1[index] > sortMe1[index + 1]) { 
+            let aux = symbol[index]; 
+            symbol[index] = symbol[index + 1];
+            symbol[index + 1] = aux;
+          }
           //compare the adjacent positions, if the right one is bigger, we have to swap
           if (sortMe1[index] > sortMe1[index + 1]) { 
             let aux = sortMe1[index]; 
@@ -49,25 +54,25 @@ function processFormData1() {
         }
         wall--; //decrease the wall for optimization
     };    
-    while (wall > 0){
-        let index = 0;
-        while (index < wall) {
-          //compare the adjacent positions, if the right one is bigger, we have to swap
-          if (sortMe1[index] > sortMe1[index + 1]) { 
-            let aux = symbol[index]; 
-            symbol[index] = symbol[index + 1];
-            symbol[index + 1] = aux;
-          }
-          index++;
-        }
-        wall--; //decrease the wall for optimization
-    };
-    symbolglobal = symbol;
+    // while (wall > 0){
+    //     let index = 0;
+    //     while (index < wall) {
+    //       //compare the adjacent positions, if the right one is bigger, we have to swap
+    //       if (sortMe1[index] > sortMe1[index + 1]) { 
+    //         let aux = symbol[index]; 
+    //         symbol[index] = symbol[index + 1];
+    //         symbol[index + 1] = aux;
+    //       }
+    //       index++;
+    //     }
+    //     wall--; //decrease the wall for optimization
+    // };
+    // symbolglobal = symbol;
     for(i=0; i < sortMe1.length; i++) {
         let sort = document.createElement("div");
         sort.classList.add("sort");
         let p = document.createElement("span");
-        p.innerHTML = symbolglobal[i];
+        p.innerHTML = symbol[i];
         let n = document.createElement("span");
         n.innerHTML = sortMe1[i];
         sort.appendChild(p);
